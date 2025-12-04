@@ -21,3 +21,15 @@ class Driver(Person):
     def deliver(self, other, order):
         print(f"{self.name} is delivering {order} to {other.name} using {self.vehicle}")
         
+class DeliveryOrder:
+    def __init__(self, customer, item, status="preparing"):
+        self.customer = customer
+        self.item = item
+        self.status = status
+        
+    def assign_driver(self, driver):
+        print(f"New driver assigned: {driver}")
+    
+    def summary(self):
+        return f"Customer name: {self.customer} | Order: {self.item} | Status: {self.status}"
+    
