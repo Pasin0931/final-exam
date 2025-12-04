@@ -37,6 +37,9 @@ class DeliveryOrder:
     def summary(self):
         return f"Order Summary:\nItem: {self.item}\nCustomer: {self.customer}\nStatus: {self.status}\nDriver: {self.this_driver.name}\n"
     
+    def check_status(self) -> None:
+        print(f"Order for {self.item} -> {self.status}")
+    
 customer_1 = Customer("Alice", "abc")
 customer_2 = Customer("Bob", "abb")
 
@@ -58,3 +61,7 @@ print(order2.summary())
 
 driver_1.deliver(customer_1, order1)
 driver_1.deliver(customer_2, order2)
+
+print()
+order1.check_status()
+order2.check_status()
