@@ -27,11 +27,14 @@ class DeliveryOrder:
         self.item = item
         self.status = status
         
-    def assign_driver(self, driver):
-        print(f"New driver assigned: {driver.name}")
+        self.this_driver = ""
+        
+    def assign_driver(self, driver) -> None:
+        # print(f"New driver assigned: {driver.name}")
+        self.this_driver = driver
     
     def summary(self):
-        return f"Customer name: {self.customer} | Order: {self.item} | Status: {self.status}"
+        return f"Order Summary:\nItem: {self.item}\nCustomer: {self.customer}\nStatus: {self.status}\nDriver: {self.this_driver.name}\n"
     
 customer_1 = Customer("Alice", "abc")
 customer_2 = Customer("Bob", "abb")
@@ -41,3 +44,13 @@ driver_1 = Driver("David", "motorcycle")
 customer_1.introduce()
 customer_2.introduce()
 driver_1.introduce()
+
+order1 = customer_1.place_order("Laptop")
+order2 = customer_2.place_order("Headphones")
+
+order1.assign_driver(driver_1)
+order2.assign_driver(driver_1)
+
+print()
+print(order1.summary())
+print(order2.summary())
