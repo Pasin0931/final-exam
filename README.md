@@ -15,6 +15,7 @@ Project Structure
 final_exam
 |- lib.py (Stores classes libraries)
 |- main.py (This is the main program)
+|- output.png (example code output)
 |- README.md
 ```
 There are no bugs in this program.
