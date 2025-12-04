@@ -19,7 +19,8 @@ class Driver(Person):
         self.vehicle = vehicle
 
     def deliver(self, other, order):
-        print(f"{self.name} is delivering {order} to {other.name} using {self.vehicle}")
+        print(f"{self.name} is delivering {order.item} to {other.name} using {self.vehicle}.")
+        order.status = "delivered"
         
 class DeliveryOrder:
     def __init__(self, customer, item, status="preparing"):
@@ -54,3 +55,6 @@ order2.assign_driver(driver_1)
 print()
 print(order1.summary())
 print(order2.summary())
+
+driver_1.deliver(customer_1, order1)
+driver_1.deliver(customer_2, order2)
