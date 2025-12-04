@@ -2,7 +2,7 @@ class Person:
     def __init__(self, name):
         self.name = name
 
-    def introduce(self):
+    def introduce(self) -> None:
         print(f"Hi, I'm {self.name}")
             
 class Customer(Person):
@@ -18,7 +18,7 @@ class Driver(Person):
         super().__init__(name)
         self.vehicle = vehicle
 
-    def deliver(self, other, order):
+    def deliver(self, other, order) -> None:
         print(f"{self.name} is delivering {order.item} to {other.name} using {self.vehicle}.")
         order.status = "delivered"
         
