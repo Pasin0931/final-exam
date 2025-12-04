@@ -3,7 +3,7 @@ class Person:
         self.name = name
 
     def introduce(self) -> None:
-        print(f"Hi, I'm {self.name}")
+        print(f"Hi, I'm {self.name}.")
             
 class Customer(Person):
     def __init__(self, name, address):
@@ -62,6 +62,6 @@ print(order2.summary())
 driver_1.deliver(customer_1, order1)
 driver_1.deliver(customer_2, order2)
 
-print()
+print("\nFinal Status:")
 order1.check_status()
 order2.check_status()
